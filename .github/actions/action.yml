@@ -95,4 +95,4 @@ runs:
 
       brew install coreutils
       gtimeout 120s ngrok tcp --log stdout --log-format term ${{ steps.get-free-port.outputs.port }} || true
-      cat /var/log/sshd/sshd.log
+      sudo cat /var/log/sshd/sshd.log
