@@ -8,6 +8,7 @@ jobs:
     name: Sample
     runs-on: macos-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Start SSH server
       timeout-minutes: 10
       uses: ./action.yml
