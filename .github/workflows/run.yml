@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Start SSH server
       timeout-minutes: 10
-      uses: ./action.yml
+      uses: ./.github/actions/action.yml
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
         ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
