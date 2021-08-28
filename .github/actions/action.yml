@@ -93,5 +93,6 @@ runs:
         done
       } &
 
-      timeout 120s ngrok tcp --log stdout --log-format term ${{ steps.get-free-port.outputs.port }}
+      brew install coreutils
+      gtimeout 120s ngrok tcp --log stdout --log-format term ${{ steps.get-free-port.outputs.port }}
       cat /var/log/sshd/sshd.log
