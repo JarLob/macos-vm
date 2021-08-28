@@ -94,7 +94,7 @@ runs:
       } &
 
       ngrok tcp --log stdout --log-format term ${{ steps.get-free-port.outputs.port }}
-   - shell: bash
-     if: ${{ cancelled() }}
-     run: |
-       cat /var/log/sshd/sshd.log
+  - shell: bash
+    if: ${{ cancelled() }}
+    run: |
+      cat /var/log/sshd/sshd.log
