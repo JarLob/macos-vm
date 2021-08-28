@@ -2,6 +2,11 @@ name: Sample SSH server workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      time:
+        description: 'How many minutes to run'
+        required: false
+        default: "10"
 
 jobs:
   sample:
