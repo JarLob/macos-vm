@@ -15,11 +15,11 @@ runs:
     shell: bash
     run: |
       if ! [[ -f /usr/sbin/sshd ]]; then
-        sudo apt-get -qy install openssh-server jq
+        brew install openssh-server jq
       fi
 
       if ! command -v ngrok > /dev/null; then
-        sudo apt-get -qy install curl unzip
+        brew install curl unzip
         curl -o /tmp/ngrok.zip -sL "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip"
         sudo unzip /tmp/ngrok.zip -d /usr/local/bin
         rm /tmp/ngrok.zip
