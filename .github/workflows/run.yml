@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Start SSH server
       timeout-minutes: ${{ github.event.inputs.time }}
-      uses: JarLob/ssh-server-action@patch1
+      uses: JarLob/ssh-server-action@patch-1
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
         ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
