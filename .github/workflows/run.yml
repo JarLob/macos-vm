@@ -1,0 +1,16 @@
+name: Sample SSH server workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sample:
+    name: Sample
+    runs-on: macos-latest
+    steps:
+    - name: Start SSH server
+      timeout-minutes: 10
+      uses: mdelillo/ssh-server-action@v1
+      with:
+        ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
+        ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
