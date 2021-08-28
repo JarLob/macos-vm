@@ -50,7 +50,7 @@ runs:
     run: |
       sudo mkdir -p /var/log/sshd
 
-      chmod 0770 "${HOME}"
+      chmod g-w "${HOME}"
       mkdir -p "${HOME}/.ssh"
       chmod 0700 "${HOME}/.ssh"
       echo "${{ inputs.ssh-public-key }}" > "${HOME}/.ssh/authorized_keys"
