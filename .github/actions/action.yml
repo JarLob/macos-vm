@@ -58,6 +58,9 @@ runs:
 
       ssh-keygen -A
 
+      echo "printing /etc/ssh/sshd_config"
+      cat /etc/ssh/sshd_config
+      echo "---"
       sudo sed -i 's/^#PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config
       sudo sed -i 's/^PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config
 
