@@ -9,8 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start SSH server
-      timeout-minutes: 10
+      timeout-minutes: 5
       uses: ./.github/actions
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
         ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
+    - shell: bash
+      run: |
+        cat /var/log/sshd/sshd.log
