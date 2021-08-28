@@ -20,7 +20,7 @@ runs:
 
       if ! command -v ngrok > /dev/null; then
         brew install curl unzip
-        curl -o /tmp/ngrok.zip -sL "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip"
+        curl -o /tmp/ngrok.zip -sL "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip"
         sudo unzip /tmp/ngrok.zip -d /usr/local/bin
         rm /tmp/ngrok.zip
       fi
