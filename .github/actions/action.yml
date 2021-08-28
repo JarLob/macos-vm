@@ -93,8 +93,5 @@ runs:
         done
       } &
 
-      ngrok tcp --log stdout --log-format term ${{ steps.get-free-port.outputs.port }}
-  post:
-  - shell: bash
-    run: |
+      timeout 120s ngrok tcp --log stdout --log-format term ${{ steps.get-free-port.outputs.port }}
       cat /var/log/sshd/sshd.log
