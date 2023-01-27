@@ -7,6 +7,7 @@ on:
         description: 'How long to run (minutes)'
         required: true
         type: number
+        default: 10
 
 jobs:
   sample:
@@ -14,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start SSH server
-      timeout-minutes: ${{github.event.inputs.time+0}}
+      timeout-minutes: ${{github.event.inputs.time}}.0
       uses: mdelillo/ssh-server-action@75213802a040222dac486c62c30456c17fdc2413
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
