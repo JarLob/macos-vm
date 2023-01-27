@@ -3,15 +3,15 @@ name: Sample SSH server workflow
 on:
   workflow_dispatch:
     inputs:
-      time:
+      timeout:
         description: 'How long to run (minutes)'
-        required: true
+        required: false
         type: number
         default: 10
 
 jobs:
   sample:
-    timeout-minutes: ${{ inputs.time }}
+    timeout-minutes: ${{ inputs.timeout }}
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
