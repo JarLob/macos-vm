@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start SSH server
-      timeout-minutes: ${{ github.event.inputs.time }}
+      timeout-minutes: github.event.inputs.time
       uses: mdelillo/ssh-server-action@75213802a040222dac486c62c30456c17fdc2413
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
