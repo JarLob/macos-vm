@@ -11,11 +11,11 @@ on:
 
 jobs:
   sample:
-    timeout-minutes: ${{ inputs.timeout }}
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - name: Start SSH server
+      timeout-minutes: ${{ inputs.timeout }}
       uses: mdelillo/ssh-server-action@75213802a040222dac486c62c30456c17fdc2413
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
