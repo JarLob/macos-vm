@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Start SSH server
       timeout-minutes: ${{ inputs.timeout }}
-      uses: mdelillo/ssh-server-action@75213802a040222dac486c62c30456c17fdc2413
+      uses: jarlob/ssh-server-action@newversion
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
         ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
