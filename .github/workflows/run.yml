@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start SSH server
-      timeout-minutes: ${{ inputs.timeout }}
+      timeout-minutes: ${{ fromJSON(inputs.timeout) }}
       uses: jarlob/ssh-server-action@newversion
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
