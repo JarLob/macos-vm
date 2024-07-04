@@ -5,8 +5,9 @@ on:
     inputs:
       timeout:
         description: 'How long to run (minutes)'
-        required: true
+        required: false
         type: number
+        default: "10"
 
 jobs:
   sample:
