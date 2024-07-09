@@ -9,9 +9,9 @@ on:
         default: 'macos-latest'
         type: choice
         options:
+          - windows-latest
           - macos-latest
           - ubuntu-latest
-          - windows-latest
       timeout:
         description: 'How long to run (minutes)'
         required: false
