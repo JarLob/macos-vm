@@ -3,20 +3,29 @@ name: Sample SSH server workflow
 on:
   workflow_dispatch:
     inputs:
+      os:
+        description: 'OS'
+        required: true
+        default: 'macos-latest'
+        type: choice
+        options:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
       timeout:
         description: 'How long to run (minutes)'
         required: false
         type: number
-        default: 10
+        default: "10"
 
 jobs:
   sample:
-    runs-on: macos-latest
+    runs-on: ${{ inputs.os }}
     steps:
     - uses: actions/checkout@v2
     - name: Start SSH server
-      timeout-minutes: ${{ inputs.timeout }}
-      uses: mdelillo/ssh-server-action@75213802a040222dac486c62c30456c17fdc2413
+      timeout-minutes: ${{ fromJSON(inputs.timeout) }}
+      uses: jarlob/ssh-server-action@windows2
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
         ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
