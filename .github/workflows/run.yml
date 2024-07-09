@@ -10,6 +10,7 @@ on:
         type: choice
         options:
           - windows-latest
+          - windows-2019
           - macos-latest
           - ubuntu-latest
       timeout:
