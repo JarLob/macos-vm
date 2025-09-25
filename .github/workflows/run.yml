@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Start SSH server
       timeout-minutes: ${{ fromJSON(inputs.timeout) }}
-      uses: jarlob/ssh-server-action@windows2
+      uses: jarlob/ssh-server-action@latest
       with:
         ngrok-authtoken: "${{ secrets.NGROK_AUTHTOKEN }}"
         ssh-public-key: "${{ secrets.SSH_PUBLIC_KEY }}"
